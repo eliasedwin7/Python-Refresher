@@ -71,3 +71,25 @@ else:
 - **Result:** If no pair is found by the time the pointers meet, the function returns `None`.
 
 This approach is simple and efficient because you only go through the list once. If you understand this, you’re ready to move on to more exciting patterns! Let me know if you’d like to explore another example or have any questions.
+
+
+## Combination Number
+you want to find all combinations of numbers (not just pairs) from the list that add up to the magic number. This is known as the "Combination Sum" problem.
+
+Let’s break it down like you’re still a kid:
+
+🧠 What You Want:
+Given a list of numbers (can have duplicates), and a target number, find all unique combinations (any size: 2, 3, 5… whatever) that add up to the target.
+
+Each number can be used only once in a combination.
+
+🔁 Strategy: Backtracking + DFS
+We go step-by-step:
+
+Try a number
+
+Check if adding it gets us closer to the target
+
+If it does, keep going
+
+If it passes the target, go back and try something else

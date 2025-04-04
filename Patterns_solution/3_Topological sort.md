@@ -1,4 +1,5 @@
-Perfect! Let's dive into **3. Topological Sort** — this one is fun and feels like organizing your chores or building LEGO in the correct order. 😄
+# 3. Topological Sort 
+this one is fun and feels like organizing your chores or building LEGO in the correct order. 😄
 
 ---
 

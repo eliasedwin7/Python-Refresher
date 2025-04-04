@@ -1,4 +1,4 @@
-Alright! Let’s move on to **2. Binary Tree BFS (Breadth-First Search)**. We’ll keep it simple like before.
+# 2. Binary Tree BFS (Breadth-First Search)**
 
 ---
 

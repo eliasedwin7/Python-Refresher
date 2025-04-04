@@ -1,5 +1,4 @@
-Awesome! Let’s go to **4. Binary Tree DFS (Depth-First Search)**. 🧗
-
+# 4. Binary Tree DFS (Depth-First Search)**.
 ---
 
 ### 🧠 Imagine You Are...

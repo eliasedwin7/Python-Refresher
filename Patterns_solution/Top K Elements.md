@@ -1,6 +1,19 @@
-Great! Let’s jump into **5. Top K Elements** — this one is super handy when you want to find the **most important things** from a big pile. 🥇
+# 5. Top K Elements
+ 
+ this one is super handy when you want to find the **most important things** from a big pile. 🥇
 
 ---
+
+🧱 What is a Heap?
+A heap is a special kind of binary tree (usually stored in an array) that always keeps the biggest or smallest element on top.
+There are two types:
+
+Type	Top Element
+Min Heap	Smallest
+Max Heap	Largest
+In Python, the default is a Min Heap using the heapq module.
+
+
 
 ### 🧠 Imagine You Are...
 
@@ -83,4 +96,63 @@ This finds numbers that **appear most often**.
 
 ---
 
-Ready to dive into **6. Modified Binary Search** next?
+
+
+
+### 🧱 What is a Heap?
+
+A **heap** is a special kind of binary tree (usually stored in an array) that always keeps the **biggest or smallest element on top**.
+
+There are two types:
+
+| Type           | Top Element |
+|----------------|-------------|
+| **Min Heap**   | Smallest    |
+| **Max Heap**   | Largest     |
+
+In Python, the default is a **Min Heap** using the `heapq` module.
+
+
+### 🛠 What Is It Used For?
+
+- Getting the **top K smallest or largest** elements quickly.
+- **Priority queues** (like handling urgent tasks first).
+- Efficient **sorting**.
+- **Greedy algorithms** (like Dijkstra’s shortest path).
+
+---
+
+### 🧰 Python Code Example
+
+```python
+import heapq
+
+nums = [5, 1, 9, 3, 7]
+heapq.heapify(nums)  # Turn it into a min-heap
+
+print("Smallest element:", nums[0])  # Always the root (min)
+
+heapq.heappush(nums, 0)  # Add new number
+print("After push:", nums)
+
+print("Pop smallest:", heapq.heappop(nums))  # Removes min
+print("Heap now:", nums)
+```
+
+---
+
+### 💡 Max Heap in Python?
+
+Python doesn’t have one by default, but you can simulate it by **pushing negative numbers**:
+
+```python
+max_heap = []
+heapq.heappush(max_heap, -10)
+heapq.heappush(max_heap, -3)
+heapq.heappush(max_heap, -8)
+
+largest = -heapq.heappop(max_heap)
+print("Largest value:", largest)
+```
+
+---
