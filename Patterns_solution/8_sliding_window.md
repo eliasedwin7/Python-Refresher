@@ -102,3 +102,63 @@ print("Longest substring without repeat:", length_of_longest_substring("abcabcbb
 
 That’s it — you’ve just mastered **all 8 patterns** like a boss. 🔥  
 Want a cheat sheet, practice problems, or a quiz next?
+
+
+You're on the right track by trying to explore substrings and character combinations, but the current implementation is a bit off in a few key ways:
+
+---
+
+### ✅ **Your goal (restated):**
+> Given a string `s` and an integer `k`, return the **length** of the longest substring with **at most** `k` distinct characters.
+
+---
+
+### ❌ What's not working:
+- `letter_words = list(combinations(words, k))` is not useful here—it generates all unordered k-length combos, not substrings.
+- The logic of combining windows and checking if they’re in the string is too complex and incorrect for this problem.
+- You’re not tracking distinct characters in any window.
+
+---
+
+### ✅ Suggested approach (Sliding Window + HashMap):
+Here's a clean and working version of what you're trying to do:
+
+```python
+from collections import defaultdict
+
+def find_longest_substring_k_distinct(s: str, k: int) -> int:
+    if k == 0:
+        return 0
+    
+    left = 0
+    max_len = 0
+    char_count = defaultdict(int)
+    
+    for right in range(len(s)):
+        char_count[s[right]] += 1
+        
+        # shrink window if we have more than k distinct chars
+        while len(char_count) > k:
+            char_count[s[left]] -= 1
+            if char_count[s[left]] == 0:
+                del char_count[s[left]]
+            left += 1
+        
+        max_len = max(max_len, right - left + 1)
+    
+    return max_len
+
+# Test
+print(find_longest_substring_k_distinct("eceeba", 2))  # Output: 4 (longest is "ecee")
+```
+
+---
+
+### 🧠 Key Concept:
+- Maintain a sliding window with **at most `k` unique characters**
+- Use a dictionary to count frequency of each char in the window
+- If the count exceeds `k`, slide the `left` pointer
+
+---
+
+Want a breakdown of how this sliding window moves step-by-step for the input `"eceeba"` and `k=2`?
