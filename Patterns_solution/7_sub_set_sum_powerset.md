@@ -1,4 +1,5 @@
-Let’s go! 🧙‍♂️ Now we dive into **7. Subset / Subset Sum / Power Set** — this one’s all about making combinations. Think of it like playing dress-up with all your toys, mixing and matching outfits.
+# 7. Subset / Subset Sum / Power Set
+ this one’s all about making combinations. Think of it like playing dress-up with all your toys, mixing and matching outfits.
 
 ---
 

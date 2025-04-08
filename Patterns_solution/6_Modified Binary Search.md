@@ -1,4 +1,5 @@
-Alright! Now we’re onto **6. Modified Binary Search** — same powerful tool, but now it’s wearing a cool disguise. 🕵️‍♂️
+# 6. Modified Binary Search
+ — same powerful tool, but now it’s wearing a cool disguise. 🕵️‍♂️
 
 ---
 

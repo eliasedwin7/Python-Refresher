@@ -1,4 +1,5 @@
-Let’s bring it home with **8. Sliding Window** — this one’s smooth, fast, and super useful when dealing with **continuous chunks** of data. 🚪📦
+# 8. Sliding Window— 
+this one’s smooth, fast, and super useful when dealing with **continuous chunks** of data. 🚪📦
 
 ---
 
