@@ -90,7 +90,7 @@ class Book:
 
 ### **F. Encapsulation**
 - `_var`: "Protected" (by convention)
-- `__var`: Name mangled to prevent access
+- `__var`: Name mangled to prevent access ( x._Person__name )
 ```python
 class Person:
     def __init__(self, name):
