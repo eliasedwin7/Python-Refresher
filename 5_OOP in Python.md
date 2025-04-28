@@ -109,10 +109,23 @@ class Circle:
         self._radius = radius
 
     @property
-    def area(self):
-        return 3.14 * self._radius ** 2
-```
+    def radius(self):
+        return self._radius
 
+    @radius.setter
+    def radius(self, value):
+        if value <= 0:
+            raise ValueError("Radius must be positive")
+        self._radius = value
+
+c = Circle(5)
+print(c.radius)    # 5
+c.radius = 10      # Works
+c.radius = -3      # Raises ValueError!
+
+```
+@property is used to make a method look and behave like an attribute, letting you run logic while keeping code clean and intuitive.
+@property is like a car's speedometer: simple to read, complex underneath.
 ---
 
 **Mini Challenge**:  
