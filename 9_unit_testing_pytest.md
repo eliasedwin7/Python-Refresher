@@ -124,6 +124,141 @@ Run all tests with:
 ```bash
 pytest
 ```
+Perfect!  
+Here’s a **clean professional-style Pytest Advanced Features Cheatsheet** you can use like a README or print for quick reference.
+
+---
+
+# 📄 pytest Advanced Features Cheatsheet
+
+---
+
+## ✅ pytest.mark (Markers)
+
+| Purpose | Example | Usage |
+|:---|:---|:---|
+| Label tests with categories (like `slow`, `db`, `auth`) | `@pytest.mark.slow` | Run specific tests: `pytest -m slow` |
+| Custom groupings for organization or CI pipelines | `@pytest.mark.api` | Run: `pytest -m api` |
+
+---
+
+## ✅ pytest.skip and pytest.xfail
+
+| Purpose | Example | When To Use |
+|:---|:---|:---|
+| **Skip** a test temporarily | `@pytest.mark.skip(reason="Feature under development")` | Known unready tests |
+| **Expected failure** (known bug, won't block pipeline) | `@pytest.mark.xfail(reason="Bug ID 1234")` | Acknowledge known issues without failing suite |
+
+---
+
+## ✅ pytest.raises
+
+| Purpose | Example | Usage |
+|:---|:---|:---|
+| Assert that a block of code raises an exception |  |
+```python
+with pytest.raises(ZeroDivisionError):
+    divide(5, 0)
+``` 
+| Confirm correct error handling |
+| Match exception message |  |
+```python
+with pytest.raises(ValueError, match="invalid literal"):
+    int("abc")
+``` 
+| Check message for detailed validation |
+
+---
+
+## ✅ caplog (Capture Logs)
+
+| Purpose | Example | Usage |
+|:---|:---|:---|
+| Capture log output during a test |  |
+```python
+def test_log_message(caplog):
+    logger.info("Important log")
+    assert "Important log" in caplog.text
+``` 
+| Validate that expected logging happens |
+
+---
+
+## ✅ monkeypatch (Temporary Replacements)
+
+| Purpose | Example | Usage |
+|:---|:---|:---|
+| Mock or replace parts of system temporarily |  |
+```python
+def test_os_name(monkeypatch):
+    monkeypatch.setattr('os.name', 'my_fake_os')
+    assert get_os_name() == 'my_fake_os'
+``` 
+| Use for environment variables, functions, classes |
+
+---
+
+# ✨ Bonus Common pytest CLI Commands
+
+| Command | What It Does |
+|:---|:---|
+| `pytest -v` | Verbose output (show each test) |
+| `pytest -k "testname"` | Run tests matching substring |
+| `pytest -m "marker"` | Run tests with specific marker |
+| `pytest --maxfail=2` | Stop after 2 failures |
+| `pytest --tb=short` | Shorter tracebacks on failure |
+
+---
+
+# 🧠 Smart Rules of Thumb:
+
+| Situation | Tool |
+|:---|:---|
+| Testing exception behavior? | Use `pytest.raises` |
+| Organizing slow/fast/db tests? | Use `@pytest.mark` |
+| Skipping temporary tests? | Use `@pytest.mark.skip` |
+| Faking/mocking behavior? | Use `monkeypatch` |
+| Validating log output? | Use `caplog` |
+
+---
+
+# 🚀 Example Combined Usage:
+
+```python
+import pytest
+
+@pytest.mark.slow
+def test_big_calculation():
+    assert big_calc(1000000) > 0
+
+@pytest.mark.skip(reason="Waiting for API access")
+def test_api_call():
+    assert call_api() == 200
+
+def test_divide_zero():
+    with pytest.raises(ZeroDivisionError, match="division by zero"):
+        divide(1, 0)
+
+def test_log_output(caplog):
+    logger.error("Something bad happened")
+    assert "bad happened" in caplog.text
+
+def test_fake_os(monkeypatch):
+    monkeypatch.setattr('os.name', 'super_os')
+    assert get_os_name() == 'super_os'
+```
+
+---
+
+# 📋 Final Important Reminder:
+
+✅ **pytest** is extremely powerful because of:
+- **Clean syntax** (`assert` without extra libraries)
+- **Flexible decorators** (`mark`, `fixture`, `parametrize`)
+- **Built-in mocking** (`monkeypatch`, `caplog`)
+- **Great error reporting** by default
+
+---
 
 ---
 
