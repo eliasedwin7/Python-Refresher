@@ -137,6 +137,87 @@ When you’re ready, we’ll tackle **file handling, parsing, and regex**—very
 For interviews, just understand the logic behind `Merge Sort` and `Quick Sort`.
 
 ---
+# **Merge Sort** is a **Divide and Conquer** algorithm.
+
+It works by:
+1. **Dividing** the list into smaller sublists.
+2. **Sorting** each sublist.
+3. **Merging** them back together in the correct order.
+
+---
+
+## How Merge Sort Works (Step-by-Step)
+
+| Step | What Happens |
+|:---|:---|
+| 1 | Split the list into two halves. |
+| 2 | Keep splitting each half until you reach lists with only **one element**. |
+| 3 | Merge two sorted lists into one sorted list. |
+| 4 | Keep merging until you have the full sorted list. |
+
+---
+
+## Example:
+
+Suppose you want to sort `[5, 2, 4, 1, 3]`
+
+ Splitting Phase:
+
+```
+[5, 2, 4, 1, 3] → [5, 2] and [4, 1, 3]
+[5, 2] → [5] and [2]
+[4, 1, 3] → [4] and [1, 3]
+[1, 3] → [1] and [3]
+```
+
+ Merging Phase:
+
+```
+[5] and [2] → [2, 5]
+[1] and [3] → [1, 3]
+[4] and [1, 3] → [1, 3, 4]
+[2, 5] and [1, 3, 4] → [1, 2, 3, 4, 5]
+```
+
+Sorted!
+
+---
+
+## Merge Sort Code (Simple Python Version)
+
+```python
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    
+    return merge(left, right)
+
+def merge(left, right):
+    result = []
+    i = j = 0
+    
+    ## Merge the two sorted halves
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    
+    ## Add remaining elements
+    result.extend(left[i:])
+    result.extend(right[j:])
+    
+    return result
+```
+
+---
+
 
 ### ✅ Summary of Patterns
 
