@@ -30,10 +30,6 @@
 **Example**: Design a test framework for a stock ticker application that updates every second.
 
 ### 4. **Behavioral/Cultural Fit**
-- SIG values:
-  - Risk/reward decision-making
-  - Clear communication
-  - Fast learning & intellectual curiosity
 
 Expect scenario-based questions like:
 - Tell me about a time you caught a critical bug.
