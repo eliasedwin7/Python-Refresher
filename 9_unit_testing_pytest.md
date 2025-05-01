@@ -68,6 +68,7 @@ pytest test_math.py
 
 Used to set up pre-conditions or shared test data.
 Inroder to access the *teardown* you can use the `yeild` keyword in the *fixture*.
+`request` fixture help in providing information of the requesting test function
 
 ```python
 import pytest
