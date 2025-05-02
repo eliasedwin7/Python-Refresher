@@ -178,3 +178,54 @@ Authorization: Bearer <token>
 
 ---
 
+## ✅ URI = **Uniform Resource Identifier**
+
+In REST APIs, a **URI identifies a resource** — like a specific user, product, or file. It's the “address” you send your HTTP request to.
+
+---
+
+## 🧱 URI Structure
+
+```
+https://api.example.com/users/123
+└───┬────────────┘ └──────┬──────┘
+   Domain               Path → resource (`user` with ID `123`)
+```
+
+---
+
+## 🧠 In REST, URI should be:
+
+| Principle                | Example                         | ✅ or ❌ |
+| ------------------------ | ------------------------------- | ------ |
+| Use **nouns**, not verbs | `/users` instead of `/getUsers` | ✅      |
+| Be **hierarchical**      | `/users/123/orders/456`         | ✅      |
+| Avoid action words       | `/createUser` or `/deleteUser`  | ❌      |
+| Use plural nouns         | `/products`, `/orders`          | ✅      |
+
+---
+
+## 🔹 Examples of REST URIs
+
+| Action              | Method | URI Example |
+| ------------------- | ------ | ----------- |
+| Get all users       | GET    | `/users`    |
+| Get user with ID 10 | GET    | `/users/10` |
+| Create new user     | POST   | `/users`    |
+| Update user         | PUT    | `/users/10` |
+| Delete user         | DELETE | `/users/10` |
+
+---
+
+## 🧾 Difference: URI vs URL vs URN
+
+| Term | Stands for                  | Meaning                                                         |
+| ---- | --------------------------- | --------------------------------------------------------------- |
+| URI  | Uniform Resource Identifier | General term for identifying a resource                         |
+| URL  | Uniform Resource Locator    | A URI that tells where to find the resource (includes protocol) |
+| URN  | Uniform Resource Name       | A URI that names a resource without location                    |
+
+📝 In REST, **URL = URI** for all practical purposes.
+
+---
+
