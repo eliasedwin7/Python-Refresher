@@ -80,7 +80,7 @@ logging.info('Logged with timestamp')
 ```python
 import logging
 
-logger = logging.getLogger()
+logger = logging.getLogger(__name__) #dispaly the function name
 logger.setLevel(logging.DEBUG)
 
 # File Handler

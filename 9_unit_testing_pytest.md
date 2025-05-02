@@ -333,4 +333,85 @@ Write a function that multiplies two numbers and create a `pytest` test file to 
 
 ---
 
-Ready to hit **Step 10: Automation, Subprocess & CLI tools** next?
+Absolutely, Edwin! Here's a clean and concise **`README.md`** style guide for using `ddt` concepts in **pytest** (even though `ddt` is typically for `unittest`, I'll show you the **pytest** way to achieve the same using `@pytest.mark.parametrize`) and also how to read data from external files like JSON or CSV.
+
+---
+
+# 📘 Data-Driven Testing (DDT) with Pytest
+
+Data-Driven Testing allows you to run the same test logic against multiple data inputs — clean, powerful, and highly maintainable.
+
+
+---
+
+## 📂 External File Data Example (JSON)
+
+### 👉 `test_data.json`
+
+```json
+[
+    {"a": 1, "b": 2, "expected": 3},
+    {"a": 3, "b": 4, "expected": 7}
+]
+```
+
+### 👉 test code
+
+```python
+import json
+import pytest
+
+# Load test data from JSON
+with open("test_data.json") as f:
+    data = json.load(f)
+
+@pytest.mark.parametrize("entry", data)
+def test_add_from_file(entry):
+    assert entry["a"] + entry["b"] == entry["expected"]
+```
+
+---
+
+## 📂 External File Data Example (CSV)
+
+### 👉 `test_data.csv`
+
+```
+a,b,expected
+1,2,3
+4,5,9
+```
+
+### 👉 test code
+
+```python
+import csv
+import pytest
+
+def read_csv_data():
+    with open('test_data.csv', newline='') as f:
+        reader = csv.DictReader(f)
+        return [(int(r['a']), int(r['b']), int(r['expected'])) for r in reader]
+
+@pytest.mark.parametrize("a, b, expected", read_csv_data())
+def test_add_from_csv(a, b, expected):
+    assert a + b == expected
+```
+
+---
+
+## 💡 Summary
+
+| Tool                       | Use                           |
+| -------------------------- | ----------------------------- |
+| `@pytest.mark.parametrize` | Built-in Pytest way to do DDT |
+| `json.load()`              | Read test cases from JSON     |
+| `csv.DictReader()`         | Read test cases from CSV      |
+
+---
+
+📌 **Best Practice:** Keep your test logic clean, move test data to external files when the data grows large.
+
+
+
+
