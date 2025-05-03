@@ -117,9 +117,102 @@ def extract_errors(filename):
 
 ---
 
-**Mini Challenge:**  
-Write a script that reads a `.txt` file and extracts all dates in the format `YYYY-MM-DD`.
+# 🎛️ Section: Argument Parsing in Python
 
 ---
 
-Ready for **Step 9: Unit Testing & Pytest** next? That’s directly tied to your role as a test engineer.
+## 🔹 What Is Argument Parsing?
+
+**Argument parsing** allows your Python script to accept input values from the **command line**, making it configurable and reusable without changing the code.
+
+You use the **`argparse` module** to handle this cleanly and professionally.
+
+---
+
+## 🔸 Why Use `argparse`?
+
+* Makes your script flexible
+* Avoids hardcoding values
+* Adds built-in help (`--help`)
+* Great for automation, test tools, CLI apps
+
+---
+
+## 🔸 Basic Example
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(description="Add two numbers")
+parser.add_argument("a", type=int, help="First number")
+parser.add_argument("b", type=int, help="Second number")
+
+args = parser.parse_args()
+print("Sum:", args.a + args.b)
+```
+
+### ✅ Usage:
+
+```bash
+python add.py 5 3
+# Output: Sum: 8
+```
+
+---
+
+## 🔸 Common Argument Types
+
+| Flag Type        | Syntax Example                    | Description                          |
+| ---------------- | --------------------------------- | ------------------------------------ |
+| Positional       | `parser.add_argument("filename")` | Required argument                    |
+| Optional (flag)  | `--verbose`                       | Boolean flag (`True` if present)     |
+| Optional (value) | `--mode test`                     | Key-value pair                       |
+| Type conversion  | `type=int`                        | Auto-convert to `int`, `float`, etc. |
+| Default value    | `default=10`                      | If not passed, fallback value        |
+
+---
+
+## 🔸 Example with Flags and Defaults
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--name", default="Guest", help="Your name")
+parser.add_argument("--verbose", action="store_true", help="Enable debug mode")
+
+args = parser.parse_args()
+
+if args.verbose:
+    print("Verbose mode is on.")
+print(f"Hello, {args.name}!")
+```
+
+### ✅ Usage:
+
+```bash
+python greet.py --name Edwin --verbose
+# Verbose mode is on.
+# Hello, Edwin!
+```
+
+---
+
+## 🔸 Helpful Features
+
+* `parser.add_argument('--count', type=int, choices=[1, 2, 3])`
+* `parser.add_argument('--list', nargs='+')` → accepts multiple values
+* `parser.add_argument('--version', action='version', version='1.0')`
+
+---
+
+## 📌 Interview Tips
+
+| Question                             | Suggested Answer                                                  |
+| ------------------------------------ | ----------------------------------------------------------------- |
+| Why use `argparse`?                  | To make CLI scripts configurable and user-friendly                |
+| How is it different from `sys.argv`? | `argparse` is structured, provides help, validation, and defaults |
+| What does `action="store_true"` do?  | Sets the value to `True` if the flag is present in the command    |
+
+---
+
