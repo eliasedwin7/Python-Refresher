@@ -199,9 +199,10 @@ Python applies them from **bottom to top**.
 ### **4. Real-World Use Cases**
 - **Logging**  
 - **Authorization** (check if user is admin)
-- **Caching**
+- **Caching** 
 - **Performance measurement** (`timeit`)
 - **Retry logic**
+- **Timing** (How long a function executes)
 
 ---
 

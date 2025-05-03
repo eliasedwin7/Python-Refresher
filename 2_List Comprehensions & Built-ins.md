@@ -76,7 +76,3 @@ squares_dict = {i: i*i for i in range(5)}
 
 ---
 
-**Mini Challenge**:
-Use list comprehension to create a list of squares for even numbers between 1 and 10.
-
----

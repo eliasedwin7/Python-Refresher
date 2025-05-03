@@ -434,6 +434,9 @@ class Account:
 ```
 
 ✅ Only `deposit()` can change the balance — this protects internal state.
+✅ `@property` and `@property.setter` helps in accessing values 
+✅ by the setter function you can set condtions to accept values. 
+
 
 ---
 
