@@ -796,3 +796,107 @@ r = Rectangle(4, 5)
 print(r)            # Rectangle(4x5)
 print(r.area)       # 20
 ```
+
+Here’s a clean, interview-ready **Section: Dynamic Attributes in Python**, covering both the theory and practical examples, with a focus on use cases relevant to automation, scripting, and frameworks.
+
+---
+
+# 🎯 Section: Dynamic Attributes in Python
+
+---
+
+## 🔹 What Are Dynamic Attributes?
+
+**Dynamic attributes** are attributes that are:
+
+* **Created or accessed at runtime**
+* Not always explicitly defined in the class
+* Useful in cases where the attribute name is not fixed
+
+This makes Python highly **flexible and reflective**, and is commonly used in frameworks like Django, Flask, or test runners.
+
+---
+
+## 🔸 Why Use Dynamic Attributes?
+
+* Handle unpredictable or user-defined keys
+* Read values dynamically from config files or databases
+* Access attributes that might not always exist
+* Build generic reusable components
+
+---
+
+## 🔸 Built-in Functions for Dynamic Attribute Access
+
+| Function    | Purpose                                 | Example                   |
+| ----------- | --------------------------------------- | ------------------------- |
+| `getattr()` | Get attribute value by name (as string) | `getattr(obj, "name")`    |
+| `setattr()` | Set a new attribute on an object        | `setattr(obj, "age", 30)` |
+| `hasattr()` | Check if an object has an attribute     | `hasattr(obj, "email")`   |
+| `delattr()` | Delete an attribute                     | `delattr(obj, "temp")`    |
+
+---
+
+## 🔸 Example
+
+```python
+class Person:
+    def __init__(self):
+        self.name = "Edwin"
+
+p = Person()
+
+# Dynamically get attribute
+print(getattr(p, "name"))   # Edwin
+
+# Dynamically set attribute
+setattr(p, "age", 28)
+print(p.age)                # 28
+
+# Check attribute existence
+if hasattr(p, "email"):
+    print(p.email)
+else:
+    print("No email set")   # No email set
+
+# Delete attribute
+delattr(p, "age")
+```
+
+---
+
+## 🔸 Use Cases in Real Projects
+
+* Handling **JSON or config values** as object attributes
+* **Frameworks** that map database fields dynamically
+* **Custom logging or tracking** decorators
+* **Dynamic test case generation**
+
+---
+
+## 🧠 Advanced: `__getattr__` and `__setattr__`
+
+These special methods allow **custom logic** when attributes are accessed or set.
+
+```python
+class Logger:
+    def __getattr__(self, name):
+        print(f"{name} was accessed but not found!")
+
+l = Logger()
+l.undefined_attribute  # Triggers __getattr__
+```
+
+---
+
+## 📌 Interview Highlights
+
+| Question                                | Suggested Answer                                                            |
+| --------------------------------------- | --------------------------------------------------------------------------- |
+| What are dynamic attributes?            | Attributes created/accessed at runtime using `getattr` or `setattr`         |
+| Why are they useful?                    | For flexible, generic, and extensible code                                  |
+| What’s the difference from normal attr? | Normal attributes are declared, dynamic ones are added/accessed dynamically |
+| When do you use `__getattr__`?          | When you want to intercept or handle missing attributes                     |
+
+---
+
