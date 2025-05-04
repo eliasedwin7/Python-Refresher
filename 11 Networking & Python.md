@@ -1,8 +1,4 @@
-Perfect twist! For a Test Engineer role, especially at a trading firm like SIG, **networking with Python** is highly relevant—think of interacting with APIs, sockets, real-time data, and test servers.
-
----
-
-## ✅ **Step 12: Networking & Python**
+# ✅ **Step 12: Networking & Python**
 
 We’ll go over:
 
@@ -143,10 +139,3 @@ ws.run_forever()
 | `websocket-client`| Real-time data feeds                   |
 
 ---
-
-**Mini Task**:  
-Write a function to call a public API and return the number of users in JSON. Add timeout and error handling.
-
----
-
-Let me know if you want to finish with **Step 13: System Design for Test Automation**, or create a final revision checklist from all 12 steps.

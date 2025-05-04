@@ -1,8 +1,4 @@
-Let’s roll into **Step 10: Automation, Subprocess, and CLI Tools**—*real weapons* for a Test Engineer, especially for automating test runs, log collection, and interacting with systems.
-
----
-
-## **Step 10: Automation, Subprocess & CLI in Python**
+# **Step 10: Automation, Subprocess & CLI in Python**
 
 ---
 
@@ -100,13 +96,3 @@ This can be run on CI or part of a larger test automation pipeline.
 | `subprocess`| Run shell commands, control processes     |
 | `os`        | Navigate filesystem, manage paths         |
 | `argparse`  | Create command-line tools with options    |
-
----
-
-**Mini Challenge:**  
-Create a script that takes a filename as input via `argparse` and prints the number of lines in that file using `subprocess`.
-
----
-
-Next up: **Step 11 – Python Internals & Special Topics (decorators, dunder methods, mutability, etc.)**  
-Shall we?

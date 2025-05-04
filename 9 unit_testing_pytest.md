@@ -1,10 +1,4 @@
-Awesome. Now we move into **Step 9: Unit Testing & Pytest**—absolutely core for a **Test Engineer** role, especially at a place like SIG.
-
----
-
-## **Step 9: Unit Testing & Pytest**
-
----
+# **Step 9: Unit Testing & Pytest**
 
 ### 🔹 **1. What is Unit Testing?**
 
@@ -83,13 +77,13 @@ def sample_data():
 def test_sum(sample_data):
     assert sum(sample_data) == 6
 ```
-### 🔹 **5. Conftest.py
+### 🔹 **5. Conftest.py**
 If you want to share the the common modules,fixtures for all the test in a folder put that in `conftest.py`.
 If you don't want to provide setup_test as pararmeter in every test you provide `autouse` .
 `scope` defines the session of the program run
 ```python
 import pytest
-@pytest.fixture(scope-"session",autouse=True)
+@pytest.fixture(scope="session",autouse=True)
 def setup_test():
     print('Started setup')
     yeild
@@ -325,15 +319,6 @@ def test_fake_os(monkeypatch):
 | `fixture`        | Set up test context               |
 | `parametrize`    | Run one test with many inputs     |
 | `mock`           | Isolate external systems          |
-
----
-
-**Mini Task:**  
-Write a function that multiplies two numbers and create a `pytest` test file to test it with 3 values.
-
----
-
-Absolutely, Edwin! Here's a clean and concise **`README.md`** style guide for using `ddt` concepts in **pytest** (even though `ddt` is typically for `unittest`, I'll show you the **pytest** way to achieve the same using `@pytest.mark.parametrize`) and also how to read data from external files like JSON or CSV.
 
 ---
 

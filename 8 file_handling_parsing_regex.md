@@ -1,8 +1,5 @@
-Perfect. Let's move to **Step 8: File Handling, Parsing, and Regex**—crucial for a Test Engineer, especially when dealing with logs, configs, test data, and automation.
 
----
-
-## **Step 8: File Handling, Parsing & Regex in Python**
+# **Step 8: File Handling, Parsing & Regex in Python**
 
 ---
 
@@ -104,6 +101,19 @@ replaced = re.sub(r"\d+", "***", "Phone: 1234567890")  # Phone: ***
 | `()`        | Grouping                      |
 
 ---
+#### Regex Pattern for Gmail Validation
+```python
+import re
+
+pattern = r'^[a-zA-Z0-9._%+-]+@gmail\.com$'
+
+email = "edwin.alias@gmail.com"
+
+if re.match(pattern, email):
+    print("Valid Gmail address ✅")
+else:
+    print("Invalid Gmail address ❌")
+```
 
 ### 🔹 Real-World Example: Log Parser
 

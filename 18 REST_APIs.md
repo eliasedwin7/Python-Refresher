@@ -1,7 +1,5 @@
 # 🌐 REST API Cheatsheet for Interviews
 
-A practical reference covering REST, RESTful, key HTTP concepts, status codes, and tooling — with theory and comparisons tailored for interview prep.
-
 
 ## 📘 REST vs RESTful
 
@@ -226,6 +224,91 @@ https://api.example.com/users/123
 | URN  | Uniform Resource Name       | A URI that names a resource without location                    |
 
 📝 In REST, **URL = URI** for all practical purposes.
+
+---
+
+
+Here’s a clear and interview-ready breakdown of **REST API**, **SOAP**, and the key comparison points you need to remember:
+
+---
+
+# 🌐 What is a REST API?
+
+**REST (Representational State Transfer)** is a web service architecture that uses **HTTP methods** to access and manipulate resources (like users, products, files) via **URLs**.
+
+### ✅ Key Concepts:
+
+* **Stateless**: Each request is independent
+* **Uses HTTP**: GET, POST, PUT, DELETE
+* **Resource-based**: Everything is treated as a resource with a URI
+* **Data format**: Usually JSON (also XML, plain text)
+* **Lightweight & Fast**: Preferred for modern web/mobile apps
+
+---
+
+### 🧠 Points to Remember for REST API
+
+| Topic         | Explanation                                                                     |
+| ------------- | ------------------------------------------------------------------------------- |
+| HTTP methods  | `GET`, `POST`, `PUT`, `DELETE`, `PATCH`                                         |
+| Status codes  | `200 OK`, `201 Created`, `400 Bad Request`, `404 Not Found`, `500 Server Error` |
+| URI naming    | Use **nouns**: `/users`, `/orders/1`                                            |
+| Format        | JSON is most common (`application/json`)                                        |
+| Idempotency   | `GET`, `PUT`, `DELETE` are idempotent (safe to repeat)                          |
+| Testing tools | Postman, Curl, REST Assured, Python `requests`                                  |
+| Security      | API keys, OAuth, JWT, HTTPS                                                     |
+
+---
+
+### 🔧 Sample REST API Call (GET)
+
+```http
+GET /users/101 HTTP/1.1
+Host: api.example.com
+```
+
+Response (JSON):
+
+```json
+{
+  "id": 101,
+  "name": "Edwin"
+}
+```
+
+---
+
+# 🧽 What is SOAP?
+
+**SOAP (Simple Object Access Protocol)** is a protocol for exchanging **structured information** via **XML** over HTTP, SMTP, etc.
+
+### ❗Key Features:
+
+* **Strict and heavy** (uses XML schemas)
+* **Protocol-based**, not just an architecture
+* **WSDL** (Web Services Description Language) used for contracts
+* Better for **enterprise-level applications** requiring **ACID-compliant transactions**, **security**, and **formal standards**
+
+---
+
+## 🔁 REST vs SOAP: Quick Comparison
+
+| Feature         | REST                | SOAP             |
+| --------------- | ------------------- | ---------------- |
+| Protocol        | Architectural style | Protocol         |
+| Data Format     | JSON, XML           | Only XML         |
+| Speed           | Faster, lightweight | Slower, verbose  |
+| Flexibility     | More flexible       | Strictly defined |
+| Security        | OAuth, HTTPS        | WS-Security      |
+| Contract (WSDL) | Optional            | Required         |
+
+---
+
+## 📌 Interview Tip:
+
+**“When would you choose SOAP over REST?”**
+
+> *If the system demands formal contracts (WSDL), strong security, or ACID-compliant transactions — like in banking or legacy enterprise systems.*
 
 ---
 
