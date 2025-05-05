@@ -60,6 +60,18 @@ print(student["name"])          # Access
 student["age"] = 26             # Update
 student["city"] = "Canberra"    # Add
 print(student.get("grade", "N/A"))  # Safe get
+
+del student["age"]             # Deletes key 'age'
+student.pop("city")            # Removes and returns value
+student.clear()                # Removes all items (dict becomes empty)
+
+student.keys()     # dict_keys(['name'])
+student.values()   # dict_values(['Edwin'])
+student.items()    # dict_items([('name', 'Edwin')])
+
+for key, value in student.items():
+    print(key, value)
+
 ```
 
 ---
@@ -70,8 +82,22 @@ unique_vals = {1, 2, 3, 3, 2}
 print(unique_vals)         # {1, 2, 3}
 
 unique_vals.add(5)
+s.update(["orange", "grape"])  # Add multiple
+
+s.pop()               # Removes random item
+s.clear()             # Empties the set
+
 unique_vals.discard(2)
 print(3 in unique_vals)    # True
+
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+a.union(b)            # {1, 2, 3, 4, 5}
+a.intersection(b)     # {3}
+a.difference(b)       # {1, 2}
+a.symmetric_difference(b)  # {1, 2, 4, 5}
+
 ```
 
 ---
