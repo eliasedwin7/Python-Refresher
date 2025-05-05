@@ -1,7 +1,3 @@
-Perfect. Now we’ll go to **Step 6: Data Structures & Algorithms in Python**—key for SIG’s technical interviews. I’ll explain each concept clearly, not just how to use it, but also *why* and *when* to use it.
-
----
-
 ## **Step 6: Data Structures & Algorithms**
 
 ---
