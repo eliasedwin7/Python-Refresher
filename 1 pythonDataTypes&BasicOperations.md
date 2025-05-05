@@ -32,6 +32,12 @@ fruits[1] = "grape"            # Update
 print(fruits[0])               # Access
 fruits.remove("apple")         # Remove
 print(len(fruits))             # Length
+fruits.remove("banana")  # Removes "banana" #❗ If the value is not found → ValueError
+last = fruits.pop()
+print(last)     # 'cherry'
+item = fruits.pop(1)
+print(item)     # 'banana' #Index out of range → IndexError
+
 ```
 
 ---
