@@ -1,3 +1,120 @@
+
+
+# 🧠 UML (Unified Modeling Language) – Cheat Sheet
+
+---
+
+## ✅ What Is UML?
+
+UML is a **visual language** used to **model the structure and behavior** of software systems. It helps teams **communicate system design** clearly.
+
+---
+
+## 🧱 Two Major Types of UML Diagrams
+
+| Type           | Purpose                 | Examples                     |
+| -------------- | ----------------------- | ---------------------------- |
+| **Structural** | How the system is built | Class, Object, Component     |
+| **Behavioral** | How the system behaves  | Use Case, Sequence, Activity |
+
+---
+
+## 🔹 Key UML Diagram Types (You Should Know)
+
+---
+
+### 1. 🧍 Use Case Diagram (Behavioral)
+
+* Shows **system features** from a **user’s perspective**
+* Actors + Use Cases + System Boundary
+
+```text
+[User] → (Login)
+        → (Reset Password)
+```
+
+---
+
+### 2. 🧩 Class Diagram (Structural)
+
+* Shows **classes**, their **attributes**, methods, and **relationships**
+* Useful for understanding code structure
+
+```text
++ User
+  - name: string
+  - login(): bool
+```
+
+🧬 Relationships:
+
+* Inheritance: `Admin` → `User`
+* Association: `User` has `Order`
+
+---
+
+### 3. ⛓ Sequence Diagram (Behavioral)
+
+* Models the **interaction between objects over time**
+* Vertical = time, Horizontal = objects
+
+```text
+User → LoginService: enter credentials
+LoginService → DB: validate
+DB → LoginService: result
+LoginService → User: success/failure
+```
+
+---
+
+### 4. 🔄 Activity Diagram (Behavioral)
+
+* Like a flowchart, shows **workflow**
+* Great for test case planning
+
+```text
+[Start] → [Check Login] → Decision ⧈ (Valid?)
+         → [Retry] or [Dashboard] → [End]
+```
+
+---
+
+### 5. 🔗 Component Diagram (Structural)
+
+* Shows system parts (modules/services)
+* Useful for microservices or architecture docs
+
+```text
+[User Interface] → [Auth Service] → [Database]
+```
+
+---
+
+## 📌 UML in Testing
+
+| Use Case                         | UML Diagram        |
+| -------------------------------- | ------------------ |
+| Mapping features to user actions | Use Case           |
+| Designing test flows             | Activity, Sequence |
+| Understanding class logic        | Class Diagram      |
+| Test automation flow             | Sequence, Activity |
+
+---
+
+## 💬 Interview Insight
+
+> “Why is UML useful in QA?”
+> Helps in **understanding system flow**, designing **better test cases**, and **tracing requirements** visually.
+
+> “Which diagram is best for business logic testing?”
+> **Activity Diagram** — it shows conditional flows and steps clearly.
+
+---
+
+Let me know if you want a UML diagram pack, tool suggestions (e.g., Draw\.io, Lucidchart), or sample questions!
+
+
+
 # ☁️ Amazon S3 Interview Prep (Theory)
 
 ---
@@ -120,3 +237,4 @@
 * Focus on **use cases, security, and lifecycle management**.
 * Emphasize **real-world usage** in CI/CD pipelines or test result archiving.
 * Know basic differences between **S3 vs. EBS vs. EFS**.
+
